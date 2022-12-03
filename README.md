@@ -18,9 +18,11 @@ Create a firewall allowing SSH, and HTTP on port 80 for your load balancer. <br 
 
 
 <img width="1209" alt="Screenshot 2022-12-02 at 10 59 56 PM" src="https://user-images.githubusercontent.com/88999663/205429127-09bd3afa-d151-4867-9fa2-df818a0604c1.png">
-<br />v
 <br />
+<br />
+
 # Step 2
+
 <br />
 <br />
 add a new user <br />
@@ -31,7 +33,9 @@ rsync --archive --chown=andrew:andrew ~/.ssh /home/andrew <br />
 <img width="418" alt="Screenshot 2022-12-02 at 10 06 10 PM" src="https://user-images.githubusercontent.com/88999663/205429306-0ea91f4f-442a-44ee-a64b-548f7ac89817.png">
 <br />
 <br />
+
 # Step 3
+
 <br />
 <br />
 ## Install a web server on both droplets
@@ -47,6 +51,7 @@ Move caddy to bin directory cp caddy /usr/bin. <br />
 <br />
 
 # Step 4
+
 <br />
 <br />
 ## make directories
@@ -74,7 +79,14 @@ inside of /opt/node put your src/index.js files. make sure to install node <br /
 
 <br />
 <br />
-# Step 5 Create Caddyfile and the caddy.service
+
+# Step 5 
+
+<br />
+<br />
+
+## Create Caddyfile and the caddy.service
+
 <br />
 <br />
 vim /etc/caddy/Caddyfile
@@ -88,6 +100,7 @@ vim /etc/systemd/system/caddy.service
 <br />
 
 # Step 6
+
 <br />
 <br />
 
@@ -104,13 +117,16 @@ This will install node on your droplet or wsl and we can then create a new node 
 <br />
 
 # Step 7
+
 <br />
 <br />
 ## write a service file to restart on failure
 <img width="1007" alt="Screenshot 2022-12-02 at 11 28 59 PM" src="https://user-images.githubusercontent.com/88999663/205430086-ce02e6ef-2f60-4a5c-a75f-d8b32f07f912.png">
 <br />
 <br />
+
 # Step 8
+
 <br />
 <br />
 ## Test and run server
@@ -127,7 +143,9 @@ systemctl start network.service
 systemctl status network.service`
 <br />
 <br />
+
 # Step 9
+
 <br />
 <br />
 ## Testing that the deployment works
