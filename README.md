@@ -142,12 +142,12 @@ RUN THE CODE BELOW TO START SERVER <br />
 
 Write the code into both droplets. <br />
 
-`systemctl enable caddy.service
-systemctl start caddy.service
-systemctl status caddy.service
+`systemctl enable caddy.service <br />
+systemctl start caddy.service <br />
+systemctl status caddy.service <br />
 
-systemctl enable network.service
-systemctl start network.service
+systemctl enable network.service <br />
+systemctl start network.service <br />
 systemctl status network.service`
 <br />
 <br />
