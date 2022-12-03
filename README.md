@@ -6,7 +6,9 @@
 I had issues with the safari browser. Chrome and Firefox work best. 
 <br />
 <br />
+
 # Step 1
+
 <br />
 <br />
 Create a VPC in San fransico data center. <br />
@@ -38,6 +40,7 @@ rsync --archive --chown=andrew:andrew ~/.ssh /home/andrew <br />
 
 <br />
 <br />
+
 ## Install a web server on both droplets
 
 Download caddy:
@@ -54,6 +57,7 @@ Move caddy to bin directory cp caddy /usr/bin. <br />
 
 <br />
 <br />
+
 ## make directories
 
 <img width="348" alt="Screenshot 2022-12-02 at 11 22 07 PM" src="https://user-images.githubusercontent.com/88999663/205429865-005da749-4ffd-408f-af76-55a2dde92382.png">
@@ -131,7 +135,9 @@ This will install node on your droplet or wsl and we can then create a new node 
 
 <br />
 <br />
+
 ## Test and run server
+
 RUN THE CODE BELOW TO START SERVER <br />
 
 Write the code into both droplets. <br />
@@ -150,6 +156,7 @@ systemctl status network.service`
 
 <br />
 <br />
+
 ## Testing that the deployment works
 
 <img width="1102" alt="Screenshot 2022-12-03 at 1 02 01 AM" src="https://user-images.githubusercontent.com/88999663/205433129-2c498b8b-0b89-4a68-a23e-fd1dc6615d86.png">
