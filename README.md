@@ -2,10 +2,10 @@
 
 # Step 1
 
-Create a VPC in San fransico data center.
-Create a load balancer in the SF datacentre of your VPC.
-Add the droplets to your load balancer.
-Create a firewall allowing SSH, and HTTP on port 80 for your load balancer.
+Create a VPC in San fransico data center. <br />
+Create a load balancer in the SF datacentre of your VPC. <br />
+Add the droplets to your load balancer. <br />
+Create a firewall allowing SSH, and HTTP on port 80 for your load balancer. <br />
 
 <img width="1173" alt="Screenshot 2022-12-02 at 11 03 02 PM" src="https://user-images.githubusercontent.com/88999663/205429252-5c7b51b6-e21e-4a39-83a0-c4f435773e32.png">
 
@@ -14,10 +14,10 @@ Create a firewall allowing SSH, and HTTP on port 80 for your load balancer.
 
 # Step 2
 
-add a new user
-useradd -ms /bin/bash andrew
-usermod -aG sudo andrew
-rsync --archive --chown=andrew:andrew ~/.ssh /home/andrew
+add a new user <br />
+useradd -ms /bin/bash andrew <br />
+usermod -aG sudo andrew <br />
+rsync --archive --chown=andrew:andrew ~/.ssh /home/andrew <br />
 
 <img width="418" alt="Screenshot 2022-12-02 at 10 06 10 PM" src="https://user-images.githubusercontent.com/88999663/205429306-0ea91f4f-442a-44ee-a64b-548f7ac89817.png">
 
@@ -27,9 +27,9 @@ rsync --archive --chown=andrew:andrew ~/.ssh /home/andrew
 
 Download caddy:
 
-tar xvf https://github.com/caddyserver/caddy/releases/download/v2.6.2/caddy_2.6.2_linux_amd64.tar.gz.
-Change caddys owner to root sudo chown root: caddy.
-Move caddy to bin directory cp caddy /usr/bin.
+tar xvf https://github.com/caddyserver/caddy/releases/download/v2.6.2/caddy_2.6.2_linux_amd64.tar.gz. <br />
+Change caddys owner to root sudo chown root: caddy. <br />
+Move caddy to bin directory cp caddy /usr/bin. <br />
 
 <img width="1439" alt="Screenshot 2022-12-02 at 10 53 53 PM" src="https://user-images.githubusercontent.com/88999663/205429567-aca1b94c-3d2d-4c66-8615-e2d86f79c9e8.png">
 
@@ -51,13 +51,13 @@ Move caddy to bin directory cp caddy /usr/bin.
 npm init
 npm i fastify
 
-Go to /var/www and put your index.html file in there
-make sure that hello_world.service is in /etc/systemd/system
-make sure that caddy.service is in /etc/systemd/system
-make sure that Caddyfile is in /etc/caddy/Caddyfile
-use systemctl daemon-reload to restart server
-systemctl restart caddy.service
-inside of /opt/node put your src/index.js files. make sure to install node
+Go to /var/www and put your index.html file in there <br />
+make sure that hello_world.service is in /etc/systemd/system <br />
+make sure that caddy.service is in /etc/systemd/system <br />
+make sure that Caddyfile is in /etc/caddy/Caddyfile <br />
+use systemctl daemon-reload to restart server <br />
+systemctl restart caddy.service <br />
+inside of /opt/node put your src/index.js files. make sure to install node <br />
 
 
 
@@ -77,10 +77,10 @@ vim /etc/systemd/system/caddy.service
 
 ## Download node with volta
 
-curl https://get.volta.sh | bash
-source ~/.bashrc
-volta install node
-This will install node on your droplet or wsl and we can then create a new node project in the src directory
+curl https://get.volta.sh | bash <br />
+source ~/.bashrc <br />
+volta install node <br />
+This will install node on your droplet or wsl and we can then create a new node project in the src directory <br />
 
 <img width="804" alt="Screenshot 2022-12-02 at 11 23 51 PM" src="https://user-images.githubusercontent.com/88999663/205429922-0cb31fd3-3102-40fa-8678-3497f10747a1.png">
 
@@ -95,9 +95,9 @@ This will install node on your droplet or wsl and we can then create a new node 
 # Step 8
 
 ## Test and run server
-RUN THE CODE BELOW TO START SERVER
+RUN THE CODE BELOW TO START SERVER <br />
 
-Write the code into both droplets. 
+Write the code into both droplets. <br />
 
 `systemctl enable caddy.service
 systemctl start caddy.service
@@ -113,5 +113,6 @@ systemctl status network.service`
 
 <img width="1102" alt="Screenshot 2022-12-03 at 1 02 01 AM" src="https://user-images.githubusercontent.com/88999663/205433129-2c498b8b-0b89-4a68-a23e-fd1dc6615d86.png">
 
-Go to the ip of the loadbalancer. Check to see if your html message is visible. Visit both droplets and check to make sure that both messages work. Visit ip/api and check to see that both droplets are active.
+Go to the ip of the loadbalancer. Check to see if your html message is visible. Visit both droplets and check to make sure that both messages work. <br />
+Visit ip/api and check to see that both droplets are active.
 
