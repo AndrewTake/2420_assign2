@@ -113,6 +113,8 @@ systemctl status network.service`
 
 <img width="1102" alt="Screenshot 2022-12-03 at 1 02 01 AM" src="https://user-images.githubusercontent.com/88999663/205433129-2c498b8b-0b89-4a68-a23e-fd1dc6615d86.png">
 
-Go to the ip of the loadbalancer. Check to see if your html message is visible. Visit both droplets and check to make sure that both messages work. <br />
+Go to the ip of the loadbalancer. <br />
+Check to see if your html message is visible. <br />
+Visit both droplets and check to make sure that both messages work. <br />
 Visit ip/api and check to see that both droplets are active.
 
