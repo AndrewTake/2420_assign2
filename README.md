@@ -112,7 +112,7 @@ systemctl enable network.service
 systemctl start network.service
 systemctl status network.service`
 
-#Step 9
+# Step 9
 
 ## Testing that the deployment works
 
