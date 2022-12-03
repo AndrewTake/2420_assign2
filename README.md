@@ -1,5 +1,10 @@
 # 2420 assign 2
 
+# ip: http://137.184.246.254 <br />
+
+## DO NOT USE SAFARI. 
+I had issues with the safari browser. Chrome and Firefox work best. 
+
 # Step 1
 
 Create a VPC in San fransico data center. <br />
