@@ -4,7 +4,8 @@
 
 ## DO NOT USE SAFARI. 
 I had issues with the safari browser. Chrome and Firefox work best. 
-
+<br />
+<br />
 # Step 1
 <br />
 <br />
