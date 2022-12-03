@@ -121,6 +121,7 @@ This will install node on your droplet or wsl and we can then create a new node 
 <br />
 <br />
 ## write a service file to restart on failure
+
 <img width="1007" alt="Screenshot 2022-12-02 at 11 28 59 PM" src="https://user-images.githubusercontent.com/88999663/205430086-ce02e6ef-2f60-4a5c-a75f-d8b32f07f912.png">
 <br />
 <br />
