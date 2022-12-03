@@ -1,6 +1,6 @@
 # 2420 assign 2
 
-#Step 1
+# Step 1
 
 Create a VPC in San fransico data center.
 Create a load balancer in the SF datacentre of your VPC.
@@ -12,7 +12,7 @@ Create a firewall allowing SSH, and HTTP on port 80 for your load balancer.
 
 <img width="1209" alt="Screenshot 2022-12-02 at 10 59 56 PM" src="https://user-images.githubusercontent.com/88999663/205429127-09bd3afa-d151-4867-9fa2-df818a0604c1.png">
 
-#Step 2
+# Step 2
 
 add a new user
 useradd -ms /bin/bash andrew
@@ -21,11 +21,12 @@ rsync --archive --chown=andrew:andrew ~/.ssh /home/andrew
 
 <img width="418" alt="Screenshot 2022-12-02 at 10 06 10 PM" src="https://user-images.githubusercontent.com/88999663/205429306-0ea91f4f-442a-44ee-a64b-548f7ac89817.png">
 
-#Step 3
+# Step 3
 
-Install a web server on both droplets
+## Install a web server on both droplets
 
 Download caddy:
+
 tar xvf https://github.com/caddyserver/caddy/releases/download/v2.6.2/caddy_2.6.2_linux_amd64.tar.gz.
 Change caddys owner to root sudo chown root: caddy.
 Move caddy to bin directory cp caddy /usr/bin.
@@ -33,22 +34,34 @@ Move caddy to bin directory cp caddy /usr/bin.
 <img width="1439" alt="Screenshot 2022-12-02 at 10 53 53 PM" src="https://user-images.githubusercontent.com/88999663/205429567-aca1b94c-3d2d-4c66-8615-e2d86f79c9e8.png">
 
 
-#Step 4
+# Step 4
 
-make directories
+## make directories
+
 <img width="348" alt="Screenshot 2022-12-02 at 11 22 07 PM" src="https://user-images.githubusercontent.com/88999663/205429865-005da749-4ffd-408f-af76-55a2dde92382.png">
 
-make index.html
+## make index.html
+
 <img width="703" alt="Screenshot 2022-12-02 at 11 14 01 PM" src="https://user-images.githubusercontent.com/88999663/205429607-5fba6c68-f5a7-4cd7-b786-af99532bce28.png">
 
-make index.js
+## make index.js
+
 <img width="618" alt="Screenshot 2022-12-02 at 11 15 04 PM" src="https://user-images.githubusercontent.com/88999663/205429634-d83ac28d-22ad-4b45-af82-2dcaf741a78e.png">
 
 npm init
 npm i fastify
 
+Go to /var/www and put your index.html file in there
+make sure that hello_world.service is in /etc/systemd/system
+make sure that caddy.service is in /etc/systemd/system
+make sure that Caddyfile is in /etc/caddy/Caddyfile
+use systemctl daemon-reload to restart server
+systemctl restart caddy.service
+inside of /opt/node put your src/index.js files. make sure to install node
 
-#Step 5 Create Caddyfile and the caddy.service
+
+
+# Step 5 Create Caddyfile and the caddy.service
 
 vim /etc/caddy/Caddyfile
 
@@ -59,10 +72,10 @@ vim /etc/systemd/system/caddy.service
 <img width="704" alt="Screenshot 2022-12-02 at 11 18 52 PM" src="https://user-images.githubusercontent.com/88999663/205429741-2ce06583-b3c1-4ee2-9b0a-f75eaf47e9cd.png">
 
 
-#Step 6
+# Step 6
 
 
-Download node with volta
+## Download node with volta
 
 curl https://get.volta.sh | bash
 source ~/.bashrc
@@ -73,18 +86,32 @@ This will install node on your droplet or wsl and we can then create a new node 
 
 
 
-#Step 7
+# Step 7
 
-write a service file to restart on failure
+## write a service file to restart on failure
 <img width="1007" alt="Screenshot 2022-12-02 at 11 28 59 PM" src="https://user-images.githubusercontent.com/88999663/205430086-ce02e6ef-2f60-4a5c-a75f-d8b32f07f912.png">
 
 
-#Step 8
+# Step 8
 
-Test and run server
+## Test and run server
+RUN THE CODE BELOW TO START SERVER
 
-<img width="844" alt="Screenshot 2022-12-02 at 11 28 25 PM" src="https://user-images.githubusercontent.com/88999663/205430072-d5c70c64-64df-419b-9416-75c1e4aa5db7.png">
+Write the code into both droplets. 
+
+`systemctl enable caddy.service
+systemctl start caddy.service
+systemctl status caddy.service
+
+systemctl enable network.service
+systemctl start network.service
+systemctl status network.service`
 
 #Step 9
+
+## Testing that the deployment works
+
 <img width="1102" alt="Screenshot 2022-12-03 at 1 02 01 AM" src="https://user-images.githubusercontent.com/88999663/205433129-2c498b8b-0b89-4a68-a23e-fd1dc6615d86.png">
+
+Go to the ip of the loadbalancer. Check to see if your html message is visible. Visit both droplets and check to make sure that both messages work. Visit ip/api and check to see that both droplets are active.
 
