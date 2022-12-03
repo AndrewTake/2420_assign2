@@ -86,6 +86,5 @@ Test and run server
 <img width="844" alt="Screenshot 2022-12-02 at 11 28 25 PM" src="https://user-images.githubusercontent.com/88999663/205430072-d5c70c64-64df-419b-9416-75c1e4aa5db7.png">
 
 #Step 9
+<img width="1102" alt="Screenshot 2022-12-03 at 1 02 01 AM" src="https://user-images.githubusercontent.com/88999663/205433129-2c498b8b-0b89-4a68-a23e-fd1dc6615d86.png">
 
-I had step 9 working, then broke it by copying code from online https://gist.github.com/jniltinho/9bd76fd13cf3fc4dd60f1a9eec509492#file-laravel-app-conf
-used this guys repo and broke everything. :(
